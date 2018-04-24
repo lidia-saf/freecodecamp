@@ -1,7 +1,5 @@
 # Tribute Page for Hedy Lamarr
 
-
-
 This project is contributed to Hedy Lamarr as a part of the FreeCodeCamp challenge. 
 
 The sources for preparing this tribute page is [Wikipedia]( https://en.wikipedia.org/wiki/Hedy_Lamarr). 
