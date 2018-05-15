@@ -1,12 +1,7 @@
-# Tribute Page for Hedy Lamarr
+# This repo contains solved challenges for freecodecamp
 
-This project is contributed to Hedy Lamarr as a part of the FreeCodeCamp challenge. 
+## List of solved challenges:
 
-The sources for preparing this tribute page is [Wikipedia]( https://en.wikipedia.org/wiki/Hedy_Lamarr). 
-
-All pictures are found and uploaded from Google.
-
-## References
-
-1. https://en.wikipedia.org/wiki/Hedy_Lamarr
-2. https://www.freecodecamp.org/challenges/build-a-tribute-page
+1. Tribute page for Hedy Lamarr [freecodecamp link with description of task]( https://www.freecodecamp.org/challenges/build-a-tribute-page)
+2. Random Quote Machine [freecodecamp link with description of task](https://www.freecodecamp.org/challenges/build-a-random-quote-machine)
+3. Show the Local Weather App [freecodecamp link with description of task](https://www.freecodecamp.org/challenges/show-the-local-weather)
