@@ -4,7 +4,7 @@ import Geolocation from './components/Geolocation';
 
 
 class App extends Component {
-  render() {
+  render(props) {
     return (
       <div className="App">
         <header className="App-header">

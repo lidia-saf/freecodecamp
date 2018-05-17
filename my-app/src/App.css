@@ -1,7 +1,7 @@
 .App {
   padding-top: 100px;
   text-align: center;
-  color: #f6f1ed;
+  color: #DDDDDD;
 }
 
 .App-logo {
@@ -10,11 +10,24 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .App-intro {
   font-size: large;
+}
+
+.temperature {
+  font-size: 1.2em;
+}
+
+.buttonTemp {
+  background-color: #001f3f;
+  border: none;
+  color: #7FDBFF;
+  font-size: 1em;
+  padding: 0px 0px;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {

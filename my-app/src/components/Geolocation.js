@@ -4,7 +4,7 @@ import Weather from './Weather';
  
 class Geolocation extends React.Component {
     render() {
-
+      console.log("Geolocation re-rendered")
     return !this.props.isGeolocationAvailable
       ? <div>Your browser does not support Geolocation</div>
       : !this.props.isGeolocationEnabled

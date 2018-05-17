@@ -14,19 +14,23 @@ class Temperature extends Component {
 
   }
 
+  // var finalTemp = () => {
+  //   this.state.isCelsius ? finalTemp = this.props.temperature : finalTemp = this.props.temperature * 1.8 + 32
+  //   console.log(finalTemp)
+  // }
 
   render() {
     let finalTemp;
-    this.state.isCelsius ? finalTemp = this.props.temperature : finalTemp = this.props.temperature * 1.8 + 32
-    console.log(finalTemp)
+    console.log("Temperature rendered")
+    this.state.isCelsius ? finalTemp = Math.round(this.props.temperature) : finalTemp = Math.round(this.props.temperature * 1.8 + 32)
     return(
       <div className='temperature'>
-        <p>{ finalTemp } <button onClick={this.handleClick}>
-        {this.state.isCelsius ? <p> °C </p> : <p> °F </p>}
+        <p>{ finalTemp } <button className='buttonTemp' onClick={this.handleClick}>
+        {this.state.isCelsius ? <p>°C </p> : <p>°F </p>}
       </button> </p>
       </div>
     );
-  }  
+  }
 }
 
 export default Temperature;
