@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+  color: #F0EDE5;
+  padding-top: 160px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #F0EDE5;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.5em;
+}
+
+.searchOff {
+  border-radius: 50%;
+  border: 4px solid #ADFF2F;
+  padding: 20px;
+  width: 7px;
+  height: 7px;
+  margin: auto;
+  background-color: none;
+}
+
