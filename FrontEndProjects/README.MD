@@ -1,4 +1,4 @@
-#H1 Responsive Survey Form for FreeCodeCamp Challenge
+# Responsive Survey Form for FreeCodeCamp Challenge
 
 The screenshot of contents:
 
