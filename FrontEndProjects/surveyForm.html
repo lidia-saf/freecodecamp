@@ -1,0 +1,157 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet/less" type="text/css" href="styles.less" />
+  <style>
+     body {
+       background-color: #DBB2D1;
+       font-family: "Montserrat", sans-serif;
+       text-align: center;
+       color: #1A1A1D;
+  }
+   .well {
+      margin-left: 15%;
+      margin-right: 15%;
+  }
+   .left-aligned {
+      text-align: left;
+  }
+   .right-aligned {
+      text-align: left;
+  }
+   input[type=text], input[type=number], select, textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      resize: vertical;
+  }
+   @media only screen and (min-width: 768px) {
+      .right-aligned {
+          text-align: right;
+      }
+  }
+  </style>
+</head>
+<body>
+  <h1 id="title">Survey Form</h1>
+    <div class="well">
+      <p id="description">Let me know how I can improve my coding skills</p>
+      <form class="form-group" id="survey-form">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 right-aligned">
+              <label for="name" id="name-label">* Name:</label>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 left-aligned">
+              <input id="name" type="text" name="name" placeholder="Enter your name" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 right-aligned">
+              <label for="email" id="email-label">* Email:</label>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 left-aligned">
+              <input id="email" type="email" name="emailAddress" placeholder="Enter your Email" required pattern="[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]+">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 right-aligned">
+              <label for="number" id="number-label">* Age:</label>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 left-aligned">
+              <input id="number" type="number" name="age" placeholder="Age" required min="1" max="125">
+            </div>
+          </div>
+          <div class="row">
+             <div class="col-xs-12 col-sm-6 col-md-6 right-aligned">
+               <p>Which option best describes your current role?</p>
+             </div>
+             <div class="col-xs-12 col-sm-6 col-md-6 left-aligned">
+               <select id="dropdown" type="text">
+                 <option value="selectOption" selected disabled hidden>Select an option</option>
+                 <option value="student">Student</option>
+                 <option value="fullTimeJob">Full Time Job</option>
+                  <option value="fullTimeLearner">Full Time Learner</option>
+                 <option value="preferNotToSay">Prefer not to say</option>
+                 <option value="other">Other</option>
+               </select>
+             </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 right-aligned">
+              <p>* Do you code every day?</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 left-aligned">
+              <input type="radio" name="practice" value="definitely" required>Definitely</input>
+              <br>
+              <input type="radio" name="practice" value="maybe" required>Maybe</input>
+              <br>
+              <input type="radio" name="practice" value="notSure" required>Not sure</input>
+              <br>
+            </div>
+            <br>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 right-aligned">
+              <p>What do you like most in coding?</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 left-aligned">
+              <select id="favouriteCoding">
+                <option value="selectOption" selected disabled hidden>Select an option</option>
+                <option value="challenge">Challenge</option>
+                <option value="result">Result</option>
+                <option value="solvingProblems">Problem Solving</option>
+              </select>
+              <br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 right-aligned">
+              <p>Things that should be improved be improved in the future (Check all that apply):</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 left-aligned">
+              <input type="checkbox" id="algorithms" name="algorithms" value="algorithms">
+              <label for="algorithms">Learn algorithms</label>
+              <br>
+              <input type="checkbox" id="interviewQuestions" name="interviewQuestions" value="interviewQuestions">
+              <label for="interviewQuestions">Study interview questions</label>
+              <br>
+              <input type="checkbox" id="code" name="code" value="code">
+              <label for="code">Code as much as you can</label>
+              <br>
+              <input type="checkbox" id="meetUp" name="meetUp" value="meetUp">
+              <label for="meetUp">Meet ups</label>
+              <br>
+              <input type="checkbox" id="openSource" name="openSource" value="openSource">
+              <label for="openSource">Do open-source projects</label>
+              <br>
+              <input type="checkbox" id="additCourse" name="additCourse" value="additCourse">
+              <label for="additCourse">Study additional courses</label>
+              <br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 right-aligned">
+              <p>Any Comments or Suggestions?</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 left-aligned">
+              <textarea placeholder="Enter your comment here..."></textarea>
+              <br>
+            </div>
+          </div>
+          <div class="row">
+            <input id="submit" class="btn btn-primary" type="submit" />
+          </div>
+      </form>
+    </div>
+<script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.2/less.min.js"/>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"/>
+</script>
+</body>
+</html>
