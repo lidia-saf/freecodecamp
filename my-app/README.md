@@ -1,8 +1,8 @@
-#This is the weather application written in React for FreeCodeCamp challenge
+# This is the weather application written in React for FreeCodeCamp challenge
 
 The link for FreeCodeCamp challenge: [https://learn.freecodecamp.org/coding-interview-prep/take-home-projects/show-the-local-weather/].
 
-##Workings
+## Workings
 
 Application contains three components:
 
@@ -18,7 +18,7 @@ This component uses the componentDidMount method to get the weather details (cou
 
 This component listens to the click event to render the temperature either in Celsius or in Fahrenheit.
 
-##Dependencies
+## Dependencies
 
 "dependencies": {
     "react": "^16.3.2",
@@ -27,6 +27,6 @@ This component listens to the click event to render the temperature either in Ce
     "react-scripts": "1.1.4"
   }
 
-##Screenshots
+## Screenshots
 
 ![Screenshot](https://github.com/lidia-saf/freecodecamp/blob/master/my-app/WeatherAppInReactScreenshot.png "Screenshot of the Weather App")
