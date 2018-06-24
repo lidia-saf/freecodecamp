@@ -1,6 +1,6 @@
 # Weather app in React for Weather FreeCodeCamp
 
-Application gets information on the current geolocation of a user and returns the weather report for the particular location at the current time.
+Application gets information on the current geolocation of a user and returns the weather report for this location at the current time.
 
 The link for FreeCodeCamp challenge: [https://learn.freecodecamp.org/coding-interview-prep/take-home-projects/show-the-local-weather/].
 
