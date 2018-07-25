@@ -5,7 +5,7 @@ class AppLayout extends Component {
   
   render() {
     return (
-      <h1>Here we will have two components with inputs</h1>
+      <h1>Here we will have two components with inputs quite soon</h1>
     );
   }
 }
