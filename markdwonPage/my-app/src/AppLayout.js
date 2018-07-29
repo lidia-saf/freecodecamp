@@ -7,7 +7,7 @@ class AppLayout extends Component {
   render() {
     return (
       <div class="container">
-        <input type="text" />
+        <input class="edit_input" type="text" />
       </div>
 
     );
