@@ -1,6 +1,6 @@
-const ADD_EDITOR = 'ADD_EDITOR';
-const ADD_PREVIEW = 'ADD_PREVIEW';
-const TRANSPILE_TEXT = 'TRANSPILE_TEXT';
+export const ADD_EDITOR = 'ADD_EDITOR';
+export const ADD_PREVIEW = 'ADD_PREVIEW';
+export const TRANSPILE_TEXT = 'TRANSPILE_TEXT';
 
 export const addEditor = text => ({
   type: ADD_EDITOR,
