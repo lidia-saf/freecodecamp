@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import './index.css'
 
 class AppLayout extends Component {
   
   render() {
     return (
-      <h1>Here we will have two components with inputs quite soon</h1>
+      <div class="container">
+        <input type="text" />
+      </div>
+
     );
   }
 }
