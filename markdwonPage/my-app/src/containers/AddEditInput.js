@@ -21,4 +21,9 @@ const AddEditInput = ({dispatch}) => {
   )
 }
 
-export default connect()(AddEditInput)
+const mapStateToProps = state => {
+    console.log(state);
+    return {text: state.text}
+}
+
+export default connect(mapStateToProps)(AddEditInput)
