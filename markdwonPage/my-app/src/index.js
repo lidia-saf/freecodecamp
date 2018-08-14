@@ -5,13 +5,12 @@ import { createStore } from 'redux';
 import AppLayout from './AppLayout'
 import { reducer } from './reducer'
 
-const initialState = [];
+const preloadedState = [];
 
-// const store = createStore(reducer, initialState,
-//   +  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// );
-
-const store = createStore(reducer, initialState);
+const store = createStore(
+  reducer, preloadedState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+ );
 
 ReactDOM.render(
     <Provider store={store}>
