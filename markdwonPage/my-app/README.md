@@ -5,4 +5,4 @@ This is the in-process app challenge for freecodecamp frontend libraries certifi
 ## So far the technologies used will include:
 1. React
 2. Redux
-3. API to process the markdown
+3. Marked.js package to process the markdown
