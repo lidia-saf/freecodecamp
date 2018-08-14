@@ -2,10 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from 'redux';
-import AppLayout from './AppLayout'
+import App from './App'
 import { reducer } from './reducer'
 
-const preloadedState = [];
+export const preloadedState = {
+  text: "# hello world"
+};
 
 const store = createStore(
   reducer, preloadedState,
@@ -14,7 +16,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-      <AppLayout />
+      <App />
     </Provider>,
     document.getElementById("root")
   )

@@ -6,7 +6,7 @@ const Edited = ({ text }) => {
 
     return(
     <div className="container">
-        <input className="edit_input" type="text" value={text} />
+        <input id="preview" className="edit_input" type="text" value={text} />
       </div>
     )
 }

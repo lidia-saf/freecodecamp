@@ -1,25 +1,18 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import './index.css'
-import Edited from './Edited'
 
-const AppLayout = ({ onChange }) => (
+const AppLayout = ({ onChange, text }) => (
   <div className="container">
-      <input onChange={onChange} className="edit_input" type="text" />
-  <Edited />
+      <textarea 
+      id="editor" 
+      onChange={onChange} 
+      className="edit_input" 
+      type="text"
+      >
+        {text}
+      </textarea>
   </div>
-)
-
-// class AppLayout extends Component {
-  
-//   render() {
-//     return (
-//       <div className="container">
-//         <input className="edit_input" type="text" />
-//       </div>
-
-//     );
-//   }
-// }
+);
 
 export default AppLayout;

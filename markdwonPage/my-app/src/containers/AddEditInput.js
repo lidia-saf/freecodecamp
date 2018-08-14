@@ -8,7 +8,7 @@ const AddEditInput = ({dispatch}) => {
 
   return (
      <div>
-        <form onChange={e => {
+        <textarea id="editor" onChange={e => {
              e.preventDefault()
              if (!input.value.trim()) {
                  return
@@ -16,7 +16,7 @@ const AddEditInput = ({dispatch}) => {
              dispatch(addEditor(input.value))
          }}
         >
-        </form>
+        </textarea>
      </div>
   )
 }

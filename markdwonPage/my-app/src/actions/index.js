@@ -7,12 +7,12 @@ export const addEditor = text => ({
   text
 });
 
-export const addPrevoew = text => ({
+export const addPreview = text => ({
   type: ADD_PREVIEW,
   text
-})
+});
 
 export const transpileText = text => ({
   type: TRANSPILE_TEXT,
   text
-})
+});
