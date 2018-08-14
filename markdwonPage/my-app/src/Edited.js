@@ -1,14 +1,26 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import './index.css'
+import './index.css';
+import { connect } from 'react-redux';
+import marked from 'marked';
 
-const Edited = ({ text }) => {
-
+const Edited = ({text}) => {
     return(
     <div className="container">
-        <input id="preview" className="edit_input" type="text" value={text} />
-      </div>
+        <div
+        id="preview" 
+        className="edit_input" 
+        dangerouslySetInnerHTML={{__html: marked(text)}}
+        >
+        </div>
+    </div>
     )
 }
 
-export default Edited;
+const mapStateToProps = state => {
+    return {
+      text: state.text
+    }
+  }
+
+export default connect(mapStateToProps)(Edited);

@@ -5,8 +5,9 @@ import {preloadedState} from './index.js';
 export const reducer = (state = preloadedState, action) => {
     switch (action.type) {
         case ADD_EDITOR:
-          return [...state, {text: action.text}];
+          const newState = Object.assign({}, state, {text: action.text})
+          return newState;
         default:
-          return preloadedState;
+          return state;
     }
 }

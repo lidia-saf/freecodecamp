@@ -22,8 +22,10 @@ const AddEditInput = ({dispatch}) => {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
-    return {text: state.text}
+  return {
+    text: state.text
+  }
 }
+
 
 export default connect(mapStateToProps)(AddEditInput)

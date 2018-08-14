@@ -12,4 +12,6 @@ body {
     width: 25em;
     height: 12.5em;
     border: solid 2px #0087ab;
+    background-color: white;
+    color: darkblue;
 }
