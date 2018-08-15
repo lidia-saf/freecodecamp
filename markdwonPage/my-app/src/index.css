@@ -2,9 +2,10 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
-    background-color: #20b2aa;
+    background-color: #485167;
     display: flex;
     flex-direction: column;
+    font-family: sans-serif;
 }
 
 .editor_container {
@@ -16,27 +17,41 @@ body {
 
 .editor_head {
     height: 1em;
-    background-color: #006E6D;
-    color: white;
+    background-color: #EAE6DA;
+    color: black;
     font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
 }
 
-.enlarge_symbol {
-    color: white;
+.expand_toggle {
+    margin-right: 0.4%;
 }
 
 .edit_input {
     height: 12.5em;
-    border: solid 2px #0087ab;
+    border: solid 2px #EAE6DA;
     background-color: white;
-    color: darkblue;
+    color: #223A5E;
+}
+
+.preview_head {
+    height: 1em;
+    background-color: #EAE6DA;
+    color: black;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
 }
 
 .preview_output {
     width: auto;
     height: auto;
-    margin: 5%;
-    border: solid 2px #0087ab;
+    border: solid 2px #EAE6DA;
     background-color: white;
-    color: darkblue;
+    color: #223A5E;
+}
+
+.preview_container {
+    margin: 5%;
 }

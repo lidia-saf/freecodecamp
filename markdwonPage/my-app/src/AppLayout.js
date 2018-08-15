@@ -9,8 +9,8 @@ const AppLayout = ({ addEditor, text }) => (
   <div className="container">
     <div className="editor_container">
       <div className="editor_head">
-        Editor
-        <div className="enlarge_symbol">&times;</div>
+        <span>Editor</span>
+        <img className="expand_toggle" width="15px" src="https://res.cloudinary.com/lidia-saf/image/upload/v1534354846/maximize.svg" alt=""/>
       </div>
       <textarea 
       id="editor" 
