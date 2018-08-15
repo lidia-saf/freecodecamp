@@ -9,7 +9,7 @@ const Edited = ({text}) => {
     <div className="container">
         <div
         id="preview" 
-        className="edit_input" 
+        className="preview_output" 
         dangerouslySetInnerHTML={{__html: marked(text)}}
         >
         </div>

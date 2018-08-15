@@ -5,12 +5,37 @@ body {
     background-color: #20b2aa;
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+.editor_container {
+    display: flex;
+    flex-direction: column;
+    width: 25em;
+    margin: 5%;
+}
+
+.editor_head {
+    height: 1em;
+    background-color: #006E6D;
+    color: white;
+    font-family: sans-serif;
+}
+
+.enlarge_symbol {
+    color: white;
 }
 
 .edit_input {
-    width: 25em;
     height: 12.5em;
+    border: solid 2px #0087ab;
+    background-color: white;
+    color: darkblue;
+}
+
+.preview_output {
+    width: auto;
+    height: auto;
+    margin: 5%;
     border: solid 2px #0087ab;
     background-color: white;
     color: darkblue;

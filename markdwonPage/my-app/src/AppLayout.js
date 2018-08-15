@@ -7,6 +7,11 @@ import { addEditor } from './actions/index'
 
 const AppLayout = ({ addEditor, text }) => (
   <div className="container">
+    <div className="editor_container">
+      <div className="editor_head">
+        Editor
+        <div className="enlarge_symbol">&times;</div>
+      </div>
       <textarea 
       id="editor" 
       onChange={e => {
@@ -21,7 +26,8 @@ const AppLayout = ({ addEditor, text }) => (
       value={text}
       >
       </textarea>
-      <Edited />
+    </div>
+    <Edited />
   </div>
 );
 
