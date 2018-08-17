@@ -1,4 +1,9 @@
 html, body {
-    background-color: #3F69AA;
+  background-color: #3F69AA;
 }
 
+.pads-container {
+  margin: 10%;
+  display: grid;
+  grid-template-columns: 33% 33% 33%; 
+}
