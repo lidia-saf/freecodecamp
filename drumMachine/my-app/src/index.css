@@ -1,5 +1,9 @@
 html, body {
   background-color: #2E4A62;
+  font-style: sans-serif;
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+  font-size: 110%;
 }
 
 .pads-container {
@@ -16,7 +20,6 @@ html, body {
   margin: 8%;
   width: 7em;
   height: 5em;
-  font-weight: bold;
 }
 
 button:hover {
@@ -42,5 +45,11 @@ button:active {
   width: 35em;
 }
 
-
-
+#display {
+  margin: 3%;
+  width: 10em;
+  height: 2em;
+  background-color: #D1B894;
+  border: 1px solid black;
+  text-align: center;
+}
