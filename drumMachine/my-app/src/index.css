@@ -1,9 +1,46 @@
 html, body {
-  background-color: #3F69AA;
+  background-color: #2E4A62;
 }
 
 .pads-container {
-  margin: 10%;
   display: grid;
   grid-template-columns: 33% 33% 33%; 
 }
+
+.drum-pad {
+  background-color: #D1B894;
+  border: 1px solid black;
+  -moz-box-shadow: 2px 4px 3px #766F57;
+  -webkit-box-shadow: 2px 4px 3px #766F57;
+  box-shadow: 2px 4px 3px #766F57;
+  margin: 8%;
+  width: 7em;
+  height: 5em;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #A9754F;
+}
+
+button:active {
+  background-color: #6C4F3D;
+  box-shadow: 0 5px #666;
+  -webkit-box-shadow: 0 5px #666;
+  -moz-box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#drum-machine {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  margin: 10%;
+  border: 3px solid #B4B7BA;
+  width: 35em;
+}
+
+
+
