@@ -5,7 +5,7 @@ import {changeBank} from './actions';
 
 class BankChanger extends React.Component {
     handleClick = (event) => {
-    event.target.checked ? this.props.setBank("bank1") : this.props.setBank("bank2")
+    event.target.checked ? this.props.setBank(true) : this.props.setBank(false)
     }
 
     render() {

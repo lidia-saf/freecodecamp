@@ -21,12 +21,15 @@ class Pads extends React.Component {
     this.myRef = [];
     console.log(this.props.bank1);
     console.log(this.props.letters)
+    let bankChosen;
+    console.log(bankChosen);
+    this.props.bank ? bankChosen = this.props.bank2 : bankChosen = this.props.bank1;
     let drumPads = [];
-    for (let i = 0; i < this.props.bank1.length; ++i) {
+    for (let i = 0; i < bankChosen.length; ++i) {
         drumPads.push(
-          <button key={this.props.bank1[i].id} className="drum-pad" value={i} id={this.props.bank1[i].id} onClick={this.handleClick}>
+          <button key={bankChosen[i].id} className="drum-pad" value={i} id={bankChosen[i].id} onClick={this.handleClick}>
             {this.props.letters[i]}
-            <audio className="clip" ref={(ref) => {this.myRef.push(ref)}} src={this.props.bank1[i].link} id={this.props.letters[i]}></audio>
+            <audio className="clip" ref={(ref) => {this.myRef.push(ref)}} src={bankChosen[i].link} id={this.props.letters[i]}></audio>
           </button>
         )
     }
@@ -40,6 +43,7 @@ class Pads extends React.Component {
 
 const mapStateToProps = state => {
   return {
+    bank: state.bank,
     bank1: state.bank1,
     bank2: state.bank2,
     letters: state.letters
