@@ -6,3 +6,7 @@ This is the in-process app challenge for freecodecamp frontend libraries certifi
 1. React
 2. Redux
 3. Marked.js package to process the markdown
+
+## Screenshot
+
+![screenshot1](https://github.com/lidia-saf/freecodecamp/blob/master/markdwonPage/my-app/screenshot1.png)
