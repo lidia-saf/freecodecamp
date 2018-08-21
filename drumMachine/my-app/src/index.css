@@ -1,7 +1,6 @@
 html, body {
   background-color: #2E4A62;
   font-style: sans-serif;
-  font-weight: bold;
   font-family: Helvetica, sans-serif;
   font-size: 110%;
 }
@@ -13,7 +12,7 @@ html, body {
 
 .drum-pad {
   background-color: #D1B894;
-  border: 1px solid black;
+  border: unset;
   border-radius: 8px;
   -moz-box-shadow: 2px 4px 3px #766F57;
   -webkit-box-shadow: 2px 4px 3px #766F57;
@@ -49,8 +48,8 @@ button:active {
 #display {
   margin: 3%;
   width: 10em;
-  height: 2em;
+  height: 1.5em;
   background-color: #D1B894;
-  border: 1px solid black;
+  border: unset;
   text-align: center;
 }
