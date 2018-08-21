@@ -84,7 +84,7 @@ export const initialState = {
     }
   ],
   letters: ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"],
-  playedAudio: 0
+  playedAudio: ""
 };
 
 const store = createStore(
