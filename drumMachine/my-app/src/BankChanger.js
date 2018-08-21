@@ -1,16 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './index.css';
+import {changeBank} from './actions';
 
-const BankChanger = () => {
-    return (
-      <div>
-         <label className="switch">
-            <input type="checkbox"/>
-            <span className="slider"></span>
-         </label>
-      </div>
-    )
+class BankChanger extends React.Component {
+    handleClick = (event) => {
+    event.target.checked ? this.props.setBank("bank1") : this.props.setBank("bank2")
+    }
+
+    render() {
+      return (
+        <div>
+          <p className="title">Bank</p>
+           <label className="switch" id="switch">
+              <input type="checkbox" onClick={this.handleClick}/>
+              <span className="slider"></span>
+           </label>
+        </div>
+      )
+    }
 }
 
 const mapStateToProps = state => {
@@ -20,4 +28,13 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(BankChanger);
+const mapDispatchToProps = dispatch => {
+    return {
+      setBank: bank => {
+        dispatch(changeBank(bank))
+        console.log(bank);
+      }
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(BankChanger);

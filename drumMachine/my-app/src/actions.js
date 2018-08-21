@@ -7,3 +7,10 @@ export const showName = (value) => {
         payload: value
     }
 }
+
+export const changeBank = (bank) => {
+    return {
+        type: CHANGE_BANK,
+        payload: bank
+    }
+}
