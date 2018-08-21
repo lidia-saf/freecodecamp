@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './index.css';
+import { showName } from './actions';
 
 class Pads extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class Pads extends React.Component {
     console.log(e.target.innerHTML);
     const node = this.myRef[e.target.value];
     console.log(node);
+    this.props.showContext(e.target.value);
     node.play();
   }
   render() {
@@ -44,5 +46,14 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    showContext: value => {
+      dispatch(showName(value))
+      console.log(value);
+    }
+  }
+}
 
-export default connect(mapStateToProps)(Pads);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Pads);

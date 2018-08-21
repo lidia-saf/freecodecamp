@@ -1,10 +1,9 @@
 export const CHANGE_BANK = "CHANGE_BANK";
-const PLAY_CLIP = "PLAY_CLIP";
+export const SHOW_NAME = "SHOW_NAME";
 
-export const playClip = (event) => {
-    event.persist();
+export const showName = (value) => {
     return {
-        type: PLAY_CLIP,
-        payload: event
+        type: SHOW_NAME,
+        payload: value
     }
 }

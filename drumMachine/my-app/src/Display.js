@@ -2,12 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './index.css';
 
-const Display = () => {
+const Display = ({playedAudio}) => {
     return (
       <div id="display">
-      Hey
+      {playedAudio}
       </div>
     )
 }
 
-export default Display;
+const mapStateToProps = state => {
+  return {
+    playedAudio: state.playedAudio
+  }
+}
+
+export default connect(mapStateToProps)(Display);

@@ -83,7 +83,8 @@ export const initialState = {
      link: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3"
     }
   ],
-  letters: ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"]
+  letters: ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"],
+  playedAudio: 0
 };
 
 const store = createStore(
