@@ -32,7 +32,7 @@
 
 ![Current Geolocaiton Weather App](https://github.com/lidia-saf/freecodecamp/blob/master/my-app/WeatherAppInReactScreenshot.png)
 
-5. MarkDown Previewer on React and Redux
+4. MarkDown Previewer on React and Redux
 
 #### description:
 
@@ -42,7 +42,7 @@
 
 ![Markdown Previewer screenshot](https://github.com/lidia-saf/freecodecamp/blob/master/markdwonPage/my-app/screenshot1.png)
 
-4. HTML and CSS design project SurveyForm
+5. HTML and CSS design project SurveyForm
 
 #### description:
 
