@@ -5,6 +5,9 @@ import { changeBank } from './actions';
 
 class BankChanger extends React.Component {
     handleClick = (event) => {
+    if (this.props.powerOff) {
+      return
+    }
     event.target.checked ? this.props.setBank(true) : this.props.setBank(false)
     }
 
@@ -25,6 +28,7 @@ const mapStateToProps = state => {
     return {
       bank1: state.bank1,
       bank2: state.bank2,
+      powerOff: state.powerOff
     }
 }
 

@@ -4,12 +4,18 @@ import './index.css';
 import BankChanger from './BankChanger';
 import Power from './Power';
 
-const Display = ({playedAudio}) => {
+const Display = ({playedAudio, powerOff}) => {
+    let description;
+    if (powerOff) {
+      description = null;
+    } else {
+      description = playedAudio;
+    }
     return (
       <div id="display-container">
         <Power />
         <div id="display">
-        {playedAudio}
+        {description}
         </div>
         <BankChanger />
       </div>
@@ -18,7 +24,8 @@ const Display = ({playedAudio}) => {
 
 const mapStateToProps = state => {
   return {
-    playedAudio: state.playedAudio
+    playedAudio: state.playedAudio,
+    powerOff: state.powerOff
   }
 }
 

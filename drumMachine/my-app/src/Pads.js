@@ -11,6 +11,9 @@ class Pads extends React.Component {
   }
 
   handleClick = (e) => {
+    if (this.props.powerOff) {
+      return
+    }
     console.log(e.target.value);
     console.log(e.target.innerHTML);
     const node = this.myRef[e.target.value];
@@ -59,7 +62,8 @@ const mapStateToProps = state => {
     bank: state.bank,
     bank1: state.bank1,
     bank2: state.bank2,
-    letters: state.letters
+    letters: state.letters,
+    powerOff: state.powerOff
   }
 }
 
