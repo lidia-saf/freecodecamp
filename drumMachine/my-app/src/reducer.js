@@ -16,7 +16,7 @@ export const reducer = (state = initialState, action) => {
         case POWER_OFF:
           return Object.assign({}, state, {powerOff: action.payload, textField: ""});
         case VOLUME_CHANGE:
-          return Object.assign({}, state, {volume: action.payload / 100, textField: ("Volume: " + action.payload)});
+          return Object.assign({}, state, {volume: action.payload / 100, textField: ("Volume: " + action.payload + "%")});
         case CLEAR_TEXT:
           return Object.assign({}, state, {textField: ""});
         default: 

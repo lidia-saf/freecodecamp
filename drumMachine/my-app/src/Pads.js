@@ -33,15 +33,33 @@ class Pads extends React.Component {
     if (this.props.lowercaseLetters.indexOf(e.keyCode) >= 0) {
         let index = this.props.lowercaseLetters.indexOf(e.keyCode);
         console.log(this.myButton[index]);
+        this.myButton[index].classList.remove("drum-pad");
+        this.myButton[index].classList.add("drum-bad");
+        console.log(this.myButton[index].classList);
         this.myRef[index].play();
         this.myRef[index].volume = this.props.volume;
         this.props.bank ? this.props.showContext(index) : this.props.showContext2(index);
       }
     }
 
+    handleKeyUp = (e) => {
+      if (this.props.powerOff) {
+        return
+      }
+      e.preventDefault();
+      if (this.props.lowercaseLetters.indexOf(e.keyCode) >= 0) {
+        let index = this.props.lowercaseLetters.indexOf(e.keyCode);
+        console.log(this.myButton[index]);
+        this.myButton[index].classList.add("drum-pad");
+        this.myButton[index].classList.remove("drum-bad");
+        console.log(this.myButton[index].classList);
+      }
+    }
+
   componentDidMount() {
     console.log(this.myRef)
     document.addEventListener("keydown", this.handleKeyPress.bind(this));
+    document.addEventListener("keyup", this.handleKeyUp.bind(this));
   }
 
   componentDidUpdate() {
@@ -58,6 +76,7 @@ class Pads extends React.Component {
 
   componentWillUnmount() {
     document.removeEventListener("keydown", this.handleKeyPress.bind(this));
+    document.removeEventListener("keyup", this.handleKeyUp.bind(this));
   }
 
   render() {
