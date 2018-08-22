@@ -2,7 +2,18 @@
 
 ## The challenges included in this repository contain:
 
-1. Tribute page for Hedy Lamarr
+1. Drum machine app
+
+#### description:
+
+([freecodecamp task]( https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-drum-machine/))
+
+#### screenshot:
+
+![Drum Machine screenshot](https://github.com/lidia-saf/freecodecamp/blob/master/drumMachine/my-app/Screenshot1.png)
+
+
+2. Tribute page for Hedy Lamarr
 
 #### description:
 
@@ -12,7 +23,7 @@
 
 ![Hedy Lamarr screenshot](https://github.com/lidia-saf/freecodecamp/blob/master/Hedy/Screenshot.png)
 
-2. Random Quote Machine
+3. Random Quote Machine
 
 #### description:
 
@@ -22,7 +33,7 @@
 
 ![RandomQuoteMachine screenshot](https://github.com/lidia-saf/freecodecamp/blob/master/randomQuoteMachine/Screenshot2.png)
 
-3. Show the Local Weather App
+4. Show the Local Weather App
 
 #### description:
 
@@ -32,7 +43,7 @@
 
 ![Current Geolocaiton Weather App](https://github.com/lidia-saf/freecodecamp/blob/master/my-app/WeatherAppInReactScreenshot.png)
 
-4. MarkDown Previewer on React and Redux
+5. MarkDown Previewer on React and Redux
 
 #### description:
 
@@ -42,7 +53,7 @@
 
 ![Markdown Previewer screenshot](https://github.com/lidia-saf/freecodecamp/blob/master/markdwonPage/my-app/screenshot1.png)
 
-5. HTML and CSS design project SurveyForm
+6. HTML and CSS design project SurveyForm
 
 #### description:
 
