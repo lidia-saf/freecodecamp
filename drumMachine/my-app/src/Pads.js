@@ -15,15 +15,28 @@ class Pads extends React.Component {
   handleClick = (e) => {
     console.log(e.target.value);
     console.log(e.target.innerHTML);
+    if (this.myRef[e.target.value] != null) {
     const node = this.myRef[e.target.value];
     console.log(node);
     this.props.showContext(e.target.value);
     node.play();
+    } else {
+      let index = e.target.value + 9;
+      console.log(index);
+      this.myRef[index].play();
+      this.props.showContext(e.target.value);
+    }
   }
-
-  setRef = (ref) => {
-    this.myRef.push(ref)
-  };
+  componentDidMount() {
+    console.log(this.myRef)
+  }
+  componentDidUpdate() {
+    console.log(this.myRef);
+    this.myRef = this.myRef.filter(element => {
+      return element;
+    });
+    console.log(this.myRef);
+  }
 
   render() {
     this.myRef = [];
@@ -37,7 +50,7 @@ class Pads extends React.Component {
         drumPads.push(
           <button key={bankChosen[i].id} className="drum-pad" value={i} id={bankChosen[i].id} onClick={this.handleClick}>
             {this.props.letters[i]}
-            <audio className="clip" ref={this.setRef} src={bankChosen[i].link} id={this.props.letters[i]}></audio>
+            <audio className="clip" ref={(ref) => {this.myRef.push(ref)}} src={bankChosen[i].link} id={this.props.letters[i]}></audio>
           </button>
         )
     }
