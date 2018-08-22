@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './index.css';
-import {changeBank} from './actions';
+import { changeBank } from './actions';
 
 class BankChanger extends React.Component {
     handleClick = (event) => {

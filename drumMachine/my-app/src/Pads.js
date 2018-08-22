@@ -8,6 +8,9 @@ class Pads extends React.Component {
     super(props);
     this.myRef = React.createRef();
     this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      bankChosen: this.props.bank1
+    }
   }
   handleClick = (e) => {
     console.log(e.target.value);
@@ -17,19 +20,24 @@ class Pads extends React.Component {
     this.props.showContext(e.target.value);
     node.play();
   }
+
+  setRef = (ref) => {
+    this.myRef.push(ref)
+  };
+
   render() {
     this.myRef = [];
     console.log(this.props.bank1);
-    console.log(this.props.letters)
+    console.log(this.props.letters);
     let bankChosen;
-    console.log(this.bankChosen);
-    this.props.bank ? this.bankChosen = this.props.bank1 : this.bankChosen = this.props.bank2;
+    this.props.bank ? bankChosen =  this.props.bank1 : bankChosen = this.props.bank2;
+    console.log(bankChosen);
     let drumPads = [];
-    for (let i = 0; i < this.bankChosen.length; ++i) {
+    for (let i = 0; i < bankChosen.length; ++i) {
         drumPads.push(
-          <button key={this.bankChosen[i].id} className="drum-pad" value={i} id={this.bankChosen[i].id} onClick={this.handleClick}>
+          <button key={bankChosen[i].id} className="drum-pad" value={i} id={bankChosen[i].id} onClick={this.handleClick}>
             {this.props.letters[i]}
-            <audio className="clip" ref={(ref) => {this.myRef.push(ref)}} src={this.bankChosen[i].link} id={this.props.letters[i]}></audio>
+            <audio className="clip" ref={this.setRef} src={bankChosen[i].link} id={this.props.letters[i]}></audio>
           </button>
         )
     }
