@@ -20,7 +20,7 @@ const Display = ({textField, powerOff, clearTextField}) => {
       }
       if (description.length > 3) {
         clearTextField("");
-      }}, 9000
+      }}, 10000
     );
     
 
