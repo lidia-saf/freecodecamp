@@ -4,18 +4,25 @@ import './index.css';
 import BankChanger from './BankChanger';
 import Power from './Power';
 import Volume from './Volume';
+import { clearText } from './actions';
 
-const Display = ({textField, powerOff}) => {
+const Display = ({textField, powerOff, clearTextField}) => {
     let description;
     if (powerOff) {
       description = null;
     } else {
       description = textField;
     }
+
+    setTimeout(() => {
+      clearTextField("");
+    }, 3000);
+    
+
     return (
       <div id="display-container">
         <Power />
-        <div id="display">
+        <div id="display" onChange={setTimeout}>
         {description}
         </div>
         <Volume />
@@ -32,4 +39,13 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Display);
+const mapDispatchToProps = dispatch => {
+  return {
+    clearTextField: text => {
+      dispatch(clearText(text));
+      console.log(text);
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Display);

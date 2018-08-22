@@ -5,6 +5,7 @@ export const SHOW_NAME2 = "SHOW_NAME2";
 export const POWER_OFF = "POWER_OFF";
 export const VOLUME_CHANGE = "VOLUME_CHANGE";
 export const SET_TEXT = "SET_TEXT";
+export const CLEAR_TEXT = "CLEAR_TEXT";
 
 export const setText = (text) => {
     return {
@@ -52,5 +53,12 @@ export const volumeChange = (volume) => {
     return {
         type: VOLUME_CHANGE,
         payload: volume
+    }
+}
+
+export const clearText = (text) => {
+    return {
+        type: CLEAR_TEXT,
+        payload: text
     }
 }
