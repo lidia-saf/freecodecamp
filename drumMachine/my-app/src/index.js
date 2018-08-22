@@ -85,6 +85,7 @@ export const initialState = {
   ],
   letters: ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"],
   playedAudio: "",
+  bankChosen: "bank2",
   bank: false
 };
 
