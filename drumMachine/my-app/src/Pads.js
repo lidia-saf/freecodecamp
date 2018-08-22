@@ -7,6 +7,7 @@ class Pads extends React.Component {
   constructor(props) {
     super(props);
     this.myRef = React.createRef();
+    this.myButton = React.createRef();
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -23,19 +24,45 @@ class Pads extends React.Component {
     node.play();
   }
 
+  handleKeyPress = (e) => {
+    if (this.props.powerOff) {
+      return
+    }
+    e.preventDefault();
+    console.log(e.keyCode);
+    if (this.props.lowercaseLetters.indexOf(e.keyCode) >= 0) {
+        let index = this.props.lowercaseLetters.indexOf(e.keyCode);
+        console.log(this.myButton[index]);
+        this.myRef[index].play();
+        this.myRef[index].volume = this.props.volume;
+        this.props.bank ? this.props.showContext(index) : this.props.showContext2(index);
+      }
+    }
+
   componentDidMount() {
     console.log(this.myRef)
+    document.addEventListener("keydown", this.handleKeyPress.bind(this));
   }
+
   componentDidUpdate() {
     console.log(this.myRef);
     this.myRef = this.myRef.filter(element => {
       return element;
     });
+    this.myButton = this.myButton.filter(element => {
+      return element;
+    });
     console.log(this.myRef);
+    console.log(this.myButton);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyPress.bind(this));
   }
 
   render() {
     this.myRef = [];
+    this.myButton = [];
     console.log(this.props.bank1);
     console.log(this.props.letters);
     let bankChosen;
@@ -44,7 +71,7 @@ class Pads extends React.Component {
     let drumPads = [];
     for (let i = 0; i < bankChosen.length; ++i) {
         drumPads.push(
-          <button key={bankChosen[i].id} className="drum-pad" value={i} id={bankChosen[i].id} onClick={this.handleClick}>
+          <button key={bankChosen[i].id} className="drum-pad" ref={(ref) => {this.myButton.push(ref)}} value={i} id={bankChosen[i].id} onClick={this.handleClick} onKeyPress={this.handleKeyPress}>
             {this.props.letters[i]}
             <audio className="clip" ref={(ref) => {this.myRef.push(ref)}} value={bankChosen[i].description} src={bankChosen[i].link} id={this.props.letters[i]}></audio>
           </button>
@@ -65,7 +92,8 @@ const mapStateToProps = state => {
     bank2: state.bank2,
     letters: state.letters,
     powerOff: state.powerOff,
-    volume: state.volume
+    volume: state.volume,
+    lowercaseLetters: state.lowercaseLetters
   }
 }
 

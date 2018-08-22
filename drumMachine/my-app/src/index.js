@@ -84,6 +84,7 @@ export const initialState = {
     }
   ],
   letters: ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"],
+  lowercaseLetters: [81, 87, 69, 65, 83, 68, 90, 88, 67],
   playedAudio: "",
   bankChosen: "bank2",
   bank: false,

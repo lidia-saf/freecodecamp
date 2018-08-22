@@ -15,8 +15,13 @@ const Display = ({textField, powerOff, clearTextField}) => {
     }
 
     setTimeout(() => {
-      clearTextField("");
-    }, 3000);
+      if (powerOff) {
+        return
+      }
+      if (description.length > 3) {
+        clearTextField("");
+      }}, 9000
+    );
     
 
     return (
