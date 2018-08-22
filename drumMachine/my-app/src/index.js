@@ -87,7 +87,8 @@ export const initialState = {
   playedAudio: "",
   bankChosen: "bank2",
   bank: false,
-  powerOff: false
+  powerOff: false,
+  volume: 0.2
 };
 
 const store = createStore(

@@ -18,6 +18,7 @@ class Pads extends React.Component {
     console.log(e.target.innerHTML);
     const node = this.myRef[e.target.value];
     console.log(node);
+    node.volume = this.props.volume;
     this.props.bank ? this.props.showContext(e.target.value) : this.props.showContext2(e.target.value);
     node.play();
   }
@@ -63,7 +64,8 @@ const mapStateToProps = state => {
     bank1: state.bank1,
     bank2: state.bank2,
     letters: state.letters,
-    powerOff: state.powerOff
+    powerOff: state.powerOff,
+    volume: state.volume
   }
 }
 

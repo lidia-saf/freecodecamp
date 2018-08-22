@@ -1,5 +1,5 @@
 import { initialState } from './index.js'
-import { CHANGE_BANK, SHOW_NAME, SHOW_NAME2, POWER_OFF } from './actions'
+import { CHANGE_BANK, SHOW_NAME, SHOW_NAME2, POWER_OFF, VOLUME_CHANGE } from './actions'
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -11,6 +11,8 @@ export const reducer = (state = initialState, action) => {
           return Object.assign({}, state, {playedAudio: state.bank2[action.payload].description});
         case POWER_OFF:
           return Object.assign({}, state, {powerOff: action.payload});
+        case VOLUME_CHANGE:
+          return Object.assign({}, state, {volume: action.payload / 100});
         default: 
           return state;
     }

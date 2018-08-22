@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './index.css';
 import BankChanger from './BankChanger';
 import Power from './Power';
+import Volume from './Volume';
 
 const Display = ({playedAudio, powerOff}) => {
     let description;
@@ -17,6 +18,7 @@ const Display = ({playedAudio, powerOff}) => {
         <div id="display">
         {description}
         </div>
+        <Volume />
         <BankChanger />
       </div>
     )

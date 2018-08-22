@@ -26,8 +26,6 @@ class BankChanger extends React.Component {
 
 const mapStateToProps = state => {
     return {
-      bank1: state.bank1,
-      bank2: state.bank2,
       powerOff: state.powerOff
     }
 }
@@ -39,6 +37,6 @@ const mapDispatchToProps = dispatch => {
         console.log(bank);
       }
     }
-  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(BankChanger);
