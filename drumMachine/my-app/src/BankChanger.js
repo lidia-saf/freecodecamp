@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './index.css';
-import { changeBank } from './actions';
+import { changeBank1, changeBank2 } from './actions';
 
 class BankChanger extends React.Component {
     handleClick = (event) => {
     if (this.props.powerOff) {
       return
     }
-    event.target.checked ? this.props.setBank(true) : this.props.setBank(false)
+    event.target.checked ? this.props.setBank1(true) : this.props.setBank2(false)
     }
 
     render() {
@@ -32,8 +32,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-      setBank: bank => {
-        dispatch(changeBank(bank))
+      setBank1: bank => {
+        dispatch(changeBank1(bank))
+        console.log(bank);
+      },
+      setBank2: bank => {
+        dispatch(changeBank2(bank))
         console.log(bank);
       }
     }

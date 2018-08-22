@@ -5,12 +5,12 @@ import BankChanger from './BankChanger';
 import Power from './Power';
 import Volume from './Volume';
 
-const Display = ({playedAudio, powerOff}) => {
+const Display = ({textField, powerOff}) => {
     let description;
     if (powerOff) {
       description = null;
     } else {
-      description = playedAudio;
+      description = textField;
     }
     return (
       <div id="display-container">
@@ -27,7 +27,8 @@ const Display = ({playedAudio, powerOff}) => {
 const mapStateToProps = state => {
   return {
     playedAudio: state.playedAudio,
-    powerOff: state.powerOff
+    powerOff: state.powerOff,
+    textField: state.textField
   }
 }
 

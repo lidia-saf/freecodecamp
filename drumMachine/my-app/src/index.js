@@ -88,7 +88,8 @@ export const initialState = {
   bankChosen: "bank2",
   bank: false,
   powerOff: false,
-  volume: 0.2
+  volume: 0.2,
+  textField: ""
 };
 
 const store = createStore(

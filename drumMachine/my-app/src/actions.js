@@ -1,8 +1,17 @@
-export const CHANGE_BANK = "CHANGE_BANK";
+export const CHANGE_BANK1 = "CHANGE_BANK1";
+export const CHANGE_BANK2 = "CHANGE_BANK2";
 export const SHOW_NAME = "SHOW_NAME";
 export const SHOW_NAME2 = "SHOW_NAME2";
 export const POWER_OFF = "POWER_OFF";
 export const VOLUME_CHANGE = "VOLUME_CHANGE";
+export const SET_TEXT = "SET_TEXT";
+
+export const setText = (text) => {
+    return {
+        type: SET_TEXT,
+        payload: text
+    }
+}
 
 export const showName = (value) => {
     return {
@@ -18,9 +27,16 @@ export const showName2 = (value) => {
     }
 }
 
-export const changeBank = (bank) => {
+export const changeBank1 = (bank) => {
     return {
-        type: CHANGE_BANK,
+        type: CHANGE_BANK1,
+        payload: bank
+    }
+}
+
+export const changeBank2 = (bank) => {
+    return {
+        type: CHANGE_BANK2,
         payload: bank
     }
 }
