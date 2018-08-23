@@ -3,9 +3,10 @@ body {
 }
 
 #calculator-container {
-    border: 2px solid #ED3456;
+    border: 3px solid white;
+    outline-width: 2px;
     outline-style: solid;
-    outline-color: #FFF5F4;
+    outline-color: #ED3456;
     margin: 6% 35% auto auto;
     width: fit-content;
     height: fit-content;
@@ -165,11 +166,16 @@ body {
     width: 16.8em;
     background-color: white;
     color: rgb(59, 62, 63);
-    font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
+}
+
+p {
+    -webkit-margin-before: unset;
+    -webkit-margin-after: unset;
+    margin: 3%;
 }
