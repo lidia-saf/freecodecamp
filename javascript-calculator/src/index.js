@@ -7,8 +7,8 @@ import Calculator from './Container/Calculator';
 import './Styles/index.css'
 
 export const initialState = {
-  input: 0,
-  output: 0};
+  input: "0",
+  output: "0"};
 
 const store = createStore(
     reducer, initialState,

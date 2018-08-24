@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 
 const Display = ({input, output}) => {
   return (
-    <div id="display" className="display">
-      <p>{input}</p>
+    <div className="display">
       <p>{output}</p>
+      <p id="display">{input}</p>
     </div>
   )
 }
