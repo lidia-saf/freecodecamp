@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from 'redux';
-import { reducer } from './reducer';
+import reducer from './reducers/reducer'
 import Calculator from './Container/Calculator';
 import './Styles/index.css'
 
 export const initialState = {
   input: "0",
-  output: "0"};
+  output: "0"
+};
 
 const store = createStore(
     reducer, initialState,

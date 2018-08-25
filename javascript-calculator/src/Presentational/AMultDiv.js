@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addInput } from '../actions';
+import { addInput, clearInput } from '../actions';
 import '../Styles/index.css';
 
-const AMultDiv = ({refreshInput}) => {
+const AMultDiv = ({refreshInput, removeInput}) => {
   function handleClick (event) {
-      console.log(event.target.value)
-      refreshInput(event.target.value);
+      if (event.target.value === "0") {
+        removeInput(event.target.value);
+      } else {
+        console.log(event.target.value)
+        refreshInput(event.target.value);
+      }
   }
 
     return (
@@ -28,6 +32,9 @@ const mapStateToProps = state => {
     return {
       refreshInput: value => {
         dispatch(addInput(value));
+      },
+      removeInput: value => {
+        dispatch(clearInput(value));
       }
     }
 }

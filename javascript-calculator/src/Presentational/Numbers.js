@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import { addInput } from '../actions'
 import '../Styles/index.css';
 
-const Numbers = ({refreshInput}) => {
+const Numbers = ({refreshInput, input}) => {
   function handleClick (event) {
+    if (input === "0" && event.target.value === "0") {
+      return;
+    }
     console.log(event.target.value)
     refreshInput(event.target.value);
   }
@@ -36,7 +39,7 @@ const Numbers = ({refreshInput}) => {
 
 const mapStateToProps = state => {
   return {
-    state: state
+    input: state.input
   }
 }
 
