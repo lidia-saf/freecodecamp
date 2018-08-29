@@ -48,13 +48,9 @@ function calculateResult(state) {
     if(numberBuffer.length) {
       console.log(numberBuffer + "here it is");
       console.log(result);
-      result.push(new Token("Literal", numberBuffer.join("")));
+      result.push(numberBuffer.join(""));
       numberBuffer = [];
     }
-  }
-  function Token(type, value) {
-    this.type = type;
-    this.value = value;
   }
   function tokenize(str) {
     str = str.split("");
@@ -65,7 +61,7 @@ function calculateResult(state) {
         numberBuffer.push(char);
       } else if (isOperator(char)) {
         emptyNumberBufferAsLiteral();
-        result.push(new Token("Operator", char));
+        result.push(char);
       }
     });
     if (numberBuffer.length) {
@@ -73,43 +69,33 @@ function calculateResult(state) {
     }
     return result;
   }
-  let outQueue = [];
-  let opStack = [];
-  let assoc = {
-    "*": "left",
-    "/": "left",
-    "+": "left",
-    "-": "left"
-  };
-  let prec = {
-    "*": 3,
-    "/": 3,
-    "+": 2,
-    "-":2
-  };
-  Token.prototype.precedence = function() {
-    return prec[this.value];
-  }
-  Token.prototype.associativity = function() {
-    return assoc[this.value];
-  }
-  Array.prototype.peek = function() {
-    return this.slice(-1)[0];
-  }
   console.log(finalResult);
-  finalResult.forEach(function(v) {
-    if(v.type === "literal") {
-      outQueue.push(v);
-    } else if(v.type === "Operator") {
-      while (opStack.peek() && (opStack.peek().type === "Operator") && ((v.associativity() === "left" && v.precedence() <= opStack.peek().precedence())
-      || (v.associativity() === "right" && v.precedence() < opStack.peek().precedence()))) {
-        outQueue.push(opStack.pop());
-      }
-      opStack.push(v);
-    }
-  })
-  console.log(outQueue.concat(opStack.reverse()));
-  return state.input;
+  // let's find * and calculate it
+  if(finalResult.indexOf("/") >= 0) {
+    let index = finalResult.indexOf("/");
+    let midResult = finalResult[index-1] / finalResult[index + 1];
+    finalResult.splice(index-1, 3, midResult);
+    console.log(finalResult);
+  }
+  if (finalResult.indexOf("*") >= 0) {
+    let index = finalResult.indexOf("*");
+    let midResult = finalResult[index-1] * finalResult[index + 1];
+    finalResult.splice(index-1, 3, midResult);
+    console.log(finalResult);
+  }
+  if (finalResult.indexOf("-") >= 0) {
+    let index = finalResult.indexOf("-");
+    let midResult = Number(finalResult[index-1]) - Number(finalResult[index + 1]);
+    finalResult.splice(index-1, 3, midResult);
+    console.log(finalResult);
+  }
+  if (finalResult.indexOf("+") >= 0) {
+    let index = finalResult.indexOf("+");
+    let midResult = Number(finalResult[index-1]) + Number(finalResult[index + 1]);
+    finalResult.splice(index-1, 3, midResult);
+    console.log(finalResult);
+  }
+  return finalResult[0];
 }
 
 
