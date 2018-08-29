@@ -101,14 +101,14 @@ function calculateResult(state) {
     if(v.type === "literal") {
       outQueue.push(v);
     } else if(v.type === "Operator") {
-      while (opStack.peek() && (opStack.peek().type === "Operator")
-    && ((v.associativity() === "left" && v.precedence() <= opStack.peek().precedence())
+      while (opStack.peek() && (opStack.peek().type === "Operator") && ((v.associativity() === "left" && v.precedence() <= opStack.peek().precedence())
       || (v.associativity() === "right" && v.precedence() < opStack.peek().precedence()))) {
         outQueue.push(opStack.pop());
       }
       opStack.push(v);
     }
   })
+  console.log(outQueue.concat(opStack.reverse()));
   return state.input;
 }
 
