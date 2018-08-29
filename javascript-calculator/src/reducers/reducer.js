@@ -71,31 +71,51 @@ function calculateResult(state) {
   }
   console.log(finalResult);
   // let's find * and calculate it
-  if(finalResult.indexOf("/") >= 0) {
+  if(finalResult.indexOf("/") >= 0 ) {
     let index = finalResult.indexOf("/");
+    if(finalResult[index-1] === "+" || finalResult[index-1] === "*" || finalResult[index-1] === "-") {
+      let midResult = finalResult[index-2] / finalResult[index + 1];
+      finalResult.splice(index-2, 4, midResult);
+      console.log(finalResult);
+    }
     let midResult = finalResult[index-1] / finalResult[index + 1];
     finalResult.splice(index-1, 3, midResult);
     console.log(finalResult);
   }
   if (finalResult.indexOf("*") >= 0) {
     let index = finalResult.indexOf("*");
+    if(finalResult[index-1] === "/" || finalResult[index-1] === "+" || finalResult[index-1] === "-") {
+      let midResult = finalResult[index-2] * finalResult[index + 1];
+      finalResult.splice(index-2, 4, midResult);
+      console.log(finalResult);
+    }
     let midResult = finalResult[index-1] * finalResult[index + 1];
     finalResult.splice(index-1, 3, midResult);
     console.log(finalResult);
   }
   if (finalResult.indexOf("-") >= 0) {
     let index = finalResult.indexOf("-");
+    if(finalResult[index-1] === "+" || finalResult[index-1] === "*" || finalResult[index-1] === "/") {
+      let midResult = Number(finalResult[index-2]) - Number(finalResult[index + 1]);
+      finalResult.splice(index-2, 4, midResult);
+      console.log(finalResult);
+    }
     let midResult = Number(finalResult[index-1]) - Number(finalResult[index + 1]);
     finalResult.splice(index-1, 3, midResult);
     console.log(finalResult);
   }
   if (finalResult.indexOf("+") >= 0) {
     let index = finalResult.indexOf("+");
+    if(finalResult[index-1] === "/" || finalResult[index-1] === "*" || finalResult[index-1] === "-") {
+      let midResult = Number(finalResult[index-2]) + Number(finalResult[index + 1]);
+      finalResult.splice(index-2, 4, midResult);
+      console.log(finalResult);
+    }
     let midResult = Number(finalResult[index-1]) + Number(finalResult[index + 1]);
     finalResult.splice(index-1, 3, midResult);
     console.log(finalResult);
   }
-  return finalResult[0];
+  return finalResult[0].toString();
 }
 
 
