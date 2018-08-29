@@ -8,6 +8,9 @@ const Numbers = ({refreshInput, input}) => {
     if (input === "0" && event.target.value === "0") {
       return;
     }
+    if (input.slice(-1) === "." && event.target.value === ".") {
+      return;
+    }
     console.log(event.target.value)
     refreshInput(event.target.value);
   }
