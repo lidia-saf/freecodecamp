@@ -33,6 +33,7 @@ function processInput(state, value) {
 function calculateResult(state) {
   let input = state.input;
   let numberBuffer = [];
+  let operatorBuffer = [];
   let result = []
   let finalResult = tokenize(input);
   function isDigit(ch) {
@@ -52,16 +53,23 @@ function calculateResult(state) {
       numberBuffer = [];
     }
   }
+  function emptyOperatorBufferAsOperator() {
+    if (operatorBuffer.length) {
+      result.push(operatorBuffer[operatorBuffer.length - 1]);
+      operatorBuffer = [];
+    }
+  }
   function tokenize(str) {
     str = str.split("");
     str.forEach(function(char, idx) {
       if(isDigit(char)) {
+        emptyOperatorBufferAsOperator();
         numberBuffer.push(char);
       } else if (char === ".") {
         numberBuffer.push(char);
       } else if (isOperator(char)) {
         emptyNumberBufferAsLiteral();
-        result.push(char);
+        operatorBuffer.push(char);
       }
     });
     if (numberBuffer.length) {
@@ -70,47 +78,27 @@ function calculateResult(state) {
     return result;
   }
   console.log(finalResult);
-  // let's find * and calculate it
+
   if(finalResult.indexOf("/") >= 0 ) {
     let index = finalResult.indexOf("/");
-    if(finalResult[index-1] === "+" || finalResult[index-1] === "*" || finalResult[index-1] === "-") {
-      let midResult = finalResult[index-2] / finalResult[index + 1];
-      finalResult.splice(index-2, 4, midResult);
-      console.log(finalResult);
-    }
     let midResult = finalResult[index-1] / finalResult[index + 1];
     finalResult.splice(index-1, 3, midResult);
     console.log(finalResult);
   }
   if (finalResult.indexOf("*") >= 0) {
     let index = finalResult.indexOf("*");
-    if(finalResult[index-1] === "/" || finalResult[index-1] === "+" || finalResult[index-1] === "-") {
-      let midResult = finalResult[index-2] * finalResult[index + 1];
-      finalResult.splice(index-2, 4, midResult);
-      console.log(finalResult);
-    }
     let midResult = finalResult[index-1] * finalResult[index + 1];
     finalResult.splice(index-1, 3, midResult);
     console.log(finalResult);
   }
   if (finalResult.indexOf("-") >= 0) {
     let index = finalResult.indexOf("-");
-    if(finalResult[index-1] === "+" || finalResult[index-1] === "*" || finalResult[index-1] === "/") {
-      let midResult = Number(finalResult[index-2]) - Number(finalResult[index + 1]);
-      finalResult.splice(index-2, 4, midResult);
-      console.log(finalResult);
-    }
     let midResult = Number(finalResult[index-1]) - Number(finalResult[index + 1]);
     finalResult.splice(index-1, 3, midResult);
     console.log(finalResult);
   }
   if (finalResult.indexOf("+") >= 0) {
     let index = finalResult.indexOf("+");
-    if(finalResult[index-1] === "/" || finalResult[index-1] === "*" || finalResult[index-1] === "-") {
-      let midResult = Number(finalResult[index-2]) + Number(finalResult[index + 1]);
-      finalResult.splice(index-2, 4, midResult);
-      console.log(finalResult);
-    }
     let midResult = Number(finalResult[index-1]) + Number(finalResult[index + 1]);
     finalResult.splice(index-1, 3, midResult);
     console.log(finalResult);
