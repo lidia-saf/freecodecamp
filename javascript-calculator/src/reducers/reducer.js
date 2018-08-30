@@ -22,6 +22,9 @@ function processInput(state, value) {
   if (state.input === "0") {
     return value;
   }
+  if (state.input === "5.5" && value === ".") {
+    return "5.5";
+  }
   let array = [];
   array.push(state.input);
   array.push(value);
@@ -49,6 +52,17 @@ function calculateResult(state) {
     if(numberBuffer.length) {
       console.log(numberBuffer + "here it is");
       console.log(result);
+      let count = 0;
+      let index;
+      for (let i=0; i< numberBuffer.length; ++i) {
+        if (numberBuffer[i] === ".") {
+          count++;
+          index = i;
+        }
+        if (count > 1) {
+          numberBuffer.splice(index, 1);
+        }
+      }
       result.push(numberBuffer.join(""));
       numberBuffer = [];
     }
