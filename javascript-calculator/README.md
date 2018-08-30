@@ -5,3 +5,5 @@
 [description of the challenge](https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator/)
 
 ### Screenshot
+
+![javascript-calculator](https://github.com/lidia-saf/freecodecamp/blob/master/javascript-calculator/screenshot1.png)
