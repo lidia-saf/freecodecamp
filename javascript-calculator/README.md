@@ -1,3 +1,5 @@
 ## Javascript Calculator for freeCodeCamp
 
-Work in progress
+This is the solved challenge for freeCodeCamp
+
+Screenshot
