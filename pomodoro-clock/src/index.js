@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from 'redux';
-import reducer from './reducers/reducer'
+import { reducer } from './reducers/reducer'
 import Pomodoro from './presentational/Pomodoro'
 
-import './Styles/index.css'
+import './styles/index.css'
 
 export const initialState = {
   input: "0",
