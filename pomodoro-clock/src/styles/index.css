@@ -1,3 +1,49 @@
 body {
-  background-color: beige;
+  background-color: #F2EFE9;
+}
+
+#clock-title {
+    color: #252627;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-size: 2.2rem;
+    margin: 5% 30%;
+}
+
+.title {
+    color: #564E58;
+    font-size: 1.5rem;
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+#session-name {
+    margin: 10% 0 0 40%;
+}
+
+#timer-label {
+    border: 2px solid #B42335;
+    border-radius: 50%;
+    width: 23rem;
+    height: 23rem;
+    margin-left: 30%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.display-number {
+    color: #252627;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-size: 1.6rem;
+}
+
+#break-increment {
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("https://res.cloudinary.com/lidia-saf/image/upload/v1535886784/up-arrow.svg")
+
 }

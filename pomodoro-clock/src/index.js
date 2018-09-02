@@ -8,8 +8,8 @@ import Pomodoro from './presentational/Pomodoro'
 import './styles/index.css'
 
 export const initialState = {
-  input: "0",
-  output: "0"
+  break: 5,
+  session: 25
 };
 
 const store = createStore(
