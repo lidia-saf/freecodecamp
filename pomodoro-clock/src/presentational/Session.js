@@ -6,9 +6,9 @@ const Session = ({sessionLength}) => {
     <div>
       <div id="session-label" class="title">Session Length</div>
       <div class="row">
-      <button id="session-decrement" type="button"></button>
+      <button id="session-decrement" type="button"><i class="down" /></button>
       <div class="display-number" id="session-length">{sessionLength}</div>
-      <button id="session-increment" type="button"></button>
+      <button id="session-increment" type="button"><i class="up" /></button>
       </div>
     </div>
   )

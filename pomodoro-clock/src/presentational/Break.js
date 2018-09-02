@@ -7,9 +7,9 @@ const Break = ({breakLength}) => {
     <div>
       <div id="break-label" className="title">Break Length</div>
       <div class="row">
-      <button id="break-decrement" type="button"></button>
+      <button id="break-decrement" type="button"><i class="down" /></button>
       <div class="display-number" id="break-length">{breakLength}</div>
-      <button id="break-increment" type="button"></button>
+      <button id="break-increment" type="button"><i class="up" /></button>
       </div>
     </div>
   )

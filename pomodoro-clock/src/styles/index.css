@@ -24,7 +24,7 @@ body {
     border-radius: 50%;
     width: 23rem;
     height: 23rem;
-    margin-left: 30%;
+    margin-left: 25%;
 }
 
 .row {
@@ -39,11 +39,38 @@ body {
     font-size: 1.6rem;
 }
 
-#break-increment {
-  text-decoration: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url("https://res.cloudinary.com/lidia-saf/image/upload/v1535886784/up-arrow.svg")
+#break-increment, #break-decrement, #session-increment, #session-decrement {
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: none;
+    border: none;
+    margin: none;
+    background-color: #F2EFE9;
+    cursor: pointer;
+}
 
+.up {
+    margin-top: 20px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+i {
+    border: solid #564E58;
+    border-width: 0 10px 10px 0;
+    background-color: #F2EFE9;
+    display: inline-block;
+    padding: 10px;
+  }
+
+#time-left {
+    font-size: 2.5rem;
+    margin: 20% 0 0 38%;
 }

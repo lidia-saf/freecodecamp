@@ -1,6 +1,7 @@
 import React from 'react';
-import Break from './Break'
-import Session from './Session'
+import Break from './Break';
+import Display from './Display';
+import Session from './Session';
 
 const Pomodoro = () => {
   return (
@@ -10,9 +11,7 @@ const Pomodoro = () => {
         <Break />
         <Session />
       </div>
-      <div id="timer-label">
-        <div class="title" id="session-name">Session</div>
-      </div>
+      <Display />
     </div>
   ) 
 }
