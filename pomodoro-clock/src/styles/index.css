@@ -79,9 +79,9 @@ i {
 .g {
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid #564E58;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #564E58;
     /* border: solid #564E58;
     border-width: 0 10px 10px 0;
     background-color: #F2EFE9;
@@ -98,4 +98,22 @@ i {
     margin: 10% 0 0 35%;
     background-color: #F2EFE9;
     cursor: pointer;
+}
+
+#reset {
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: none;
+    border: none;
+    margin: 10% 0 0 35%;
+    background-color: #F2EFE9;
+    cursor: pointer;
+}
+
+.startResetButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
