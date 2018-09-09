@@ -9,6 +9,8 @@ const Display = ({sessionLength, seconds}) => {
         <div class="title" id="session-name">Session</div>
         <div id="time-left" class="display-number">{sessionLength}:{seconds}</div>
       </div>
+      <button id="start_stop"><div className="g"/></button>
+      <button id="reset" type="button"></button>
     </div>
   )
 }
