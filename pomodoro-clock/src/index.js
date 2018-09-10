@@ -10,7 +10,8 @@ import './styles/index.css'
 export const initialState = {
   break: 5,
   session: 25,
-  seconds: "00",
+  seconds: 0,
+  timer: false
 };
 
 const store = createStore(

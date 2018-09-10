@@ -1,22 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { decrementBreak } from '../actions';
+import { decrementBreak, incrementBreak } from '../actions';
 
 
-const Break = ({breakLength, reduceBreak}) => {
-  function handleClick(e) {
-    if (e.target.value == "decrement") {
-      reduceBreak(breakLength-1);
-    }
-  };
-
+const Break = ({breakLength, reduceBreak, addBreak}) => {
   return (
     <div>
       <div id="break-label" className="title">Break Length</div>
       <div className="row">
-      <button id="break-decrement" type="button" onClick={(e)=> handleClick(e)} value="decrement"><i className="down" /></button>
+      <button id="break-decrement" type="button" onClick={reduceBreak} value="decrement"><i className="down" /></button>
       <div className="display-number" id="break-length">{breakLength}</div>
-      <button id="break-increment" type="button" onClick={(e)=>handleClick(e)} value="increment"><i className="up" /></button>
+      <button id="break-increment" type="button" onClick={addBreak} value="increment"><i className="up" /></button>
       </div>
     </div>
   )
@@ -26,11 +20,12 @@ const mapStateToProps = state => {
     return {
       breakLength: state.break
     }
-  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
-    reduceBreak: (newBreak) => {dispatch(decrementBreak(newBreak))},
+    reduceBreak: () => {dispatch(decrementBreak())},
+    addBreak: () => {dispatch(incrementBreak())}
   }
 }
 
